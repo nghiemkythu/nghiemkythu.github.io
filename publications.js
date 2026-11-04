@@ -50,6 +50,7 @@ const papers = [
     venue: "International Conference on Machine Learning (ICML), 2025",
     img: "ICML_2025.jpg",
     pdf: "https://arxiv.org/pdf/2502.03029",
+    code: "https://github.com/duyhominhnguyen/llama-adaptor-nonlinear",
   },
   {
     year: 2025,
