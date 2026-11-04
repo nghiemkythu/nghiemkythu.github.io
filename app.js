@@ -1,21 +1,41 @@
-const papers = [
-{year:2026,tag:'Under Review',status:'review',title:'RoboGaze: Evaluating Robot World Models via Structured Vision-Language Analysis',authors:'Minh-Loi Nguyen, <b>Nghiem Tuong Diep</b>, Hung Khang Nguyen, Minh Le, et al.',venue:'Preprint, 2026',img:'Robogaze.png',pdf:'https://arxiv.org/pdf/2606.28385',project:'https://robogaze-eval.github.io/'},
-{year:2026,tag:'ICML',title:'FOCA: Future-Oriented Conditioning for Data-Efficient Vision-Language-Action Adaptation',authors:'Duc M. Nguyen*, <b>Nghiem T. Diep*</b>, Binh G. Nguyen*, Trong-Bao Ho, et al.',venue:'International Conference on Machine Learning (ICML), 2026',img:'FOCA.png',pdf:'https://arxiv.org/pdf/2606.20867',project:'https://focavla.github.io/'},
-{year:2025,tag:'NeurIPS',title:'ExGra-Med: Extended Context Graph Alignment for Medical Vision-Language Models',authors:'Duy MH Nguyen, <b>Nghiem T. Diep</b>, Trung Q. Nguyen, Hoang-Bao Le, et al.',venue:'Advances in Neural Information Processing Systems (NeurIPS), 2025',img:'exgramed.jpg',pdf:'https://openreview.net/pdf?id=TjWdyVWBAG',project:'https://exgra-med.github.io/'},
-{year:2025,tag:'ICML',title:'On Zero-Initialized Attention: Optimal Prompt and Gating Factor Estimation',authors:'<b>Nghiem T. Diep*</b>, Huy Nguyen*, Chau Nguyen*, Minh Le, Duy MH Nguyen, Daniel Sonntag, Mathias Niepert, Nhat Ho',venue:'International Conference on Machine Learning (ICML), 2025',img:'ICML_2025.jpg',pdf:'https://arxiv.org/pdf/2502.03029'},
-{year:2025,tag:'TMLR',title:'MGPATH: Vision-Language Model with Multi-Granular Prompt Learning for Few-Shot WSI Classification',authors:'Anh-Tien Nguyen, Duy MH Nguyen, <b>Nghiem Tuong Diep</b>, Trung Quoc Nguyen, et al.',venue:'Transactions on Machine Learning Research (TMLR), 2025',img:'TMLR_2025.jpg',pdf:'https://openreview.net/pdf?id=u7U81JLGjH',code:'https://github.com/HauschildLab/MGPATH'},
-{year:2023,tag:'NeurIPS',title:'LVM-Med: Learning Large-Scale Self-Supervised Vision Models for Medical Imaging via Second-Order Graph Matching',authors:'Duy MH Nguyen, Hoang Nguyen, <b>Nghiem Diep</b>, Tan Ngoc Pham, Tri Cao, et al.',venue:'Advances in Neural Information Processing Systems (NeurIPS), 2023',img:'NeurIPS_2023.jpg',pdf:'https://arxiv.org/abs/2306.11925',code:'https://github.com/duyhominhnguyen/LVM-Med'}
-];
-function paperCard(p){return `<article class="paper" data-year="${p.year}"><div class="paper-media"><span class="venue-tag">${p.tag}</span><img src="assets/${p.img}" alt="${p.title} — paper overview" loading="lazy"></div><div><h3><a href="${p.pdf}" target="_blank" rel="noopener">${p.title}</a></h3><p class="authors">${p.authors}</p><p class="venue">${p.status==='review'?p.year:p.venue}</p><div class="paper-links"><a href="${p.pdf}" target="_blank" rel="noopener">PDF</a>${p.project?`<a href="${p.project}" target="_blank" rel="noopener">PROJECT</a>`:''}${p.code?`<a href="${p.code}" target="_blank" rel="noopener">CODE</a>`:''}</div></div></article>`}
-const accepted=papers.filter(p=>p.status!=='review');
-document.querySelector('#preprint-papers').innerHTML=papers.filter(p=>p.status==='review').map(paperCard).join('');
-function renderAccepted(year='all'){
- const visible=accepted.filter(p=>year==='all'||String(p.year)===year);
- const years=[...new Set(visible.map(p=>p.year))];
- document.querySelector('#papers').innerHTML=years.map(y=>`<div class="year-group"><h3 class="year-heading">${y}</h3>${visible.filter(p=>p.year===y).map(paperCard).join('')}</div>`).join('');
- document.querySelector('#count').textContent=`${visible.length} accepted ${visible.length===1?'work':'works'}`;
+// PUBLICATION DISPLAY — renders publications.js and handles year filters.
+// To update paper content, edit publications.js instead.
+
+function paperCard(p) {
+  return `<article class="paper" data-year="${p.year}"><div class="paper-media"><span class="venue-tag">${p.tag}</span><img src="assets/${p.img}" alt="${p.title} — paper overview" loading="lazy"></div><div><h3><a href="${p.pdf}" target="_blank" rel="noopener">${p.title}</a></h3><p class="authors">${p.authors}</p><p class="venue">${p.status === "review" ? p.year : p.venue}</p><div class="paper-links"><a href="${p.pdf}" target="_blank" rel="noopener">PDF</a>${p.project ? `<a href="${p.project}" target="_blank" rel="noopener">PROJECT</a>` : ""}${p.code ? `<a href="${p.code}" target="_blank" rel="noopener">CODE</a>` : ""}</div></div></article>`;
+}
+const accepted = papers.filter((p) => p.status !== "review");
+document.querySelector("#preprint-papers").innerHTML = papers
+  .filter((p) => p.status === "review")
+  .map(paperCard)
+  .join("");
+function renderAccepted(year = "all") {
+  const visible = accepted.filter(
+    (p) => year === "all" || String(p.year) === year,
+  );
+  const years = [...new Set(visible.map((p) => p.year))];
+  document.querySelector("#papers").innerHTML =
+    year === "all"
+      ? visible.map(paperCard).join("")
+      : years
+          .map(
+            (y) =>
+              `<div class="year-group"><h3 class="year-heading">${y}</h3>${visible
+                .filter((p) => p.year === y)
+                .map(paperCard)
+                .join("")}</div>`,
+          )
+          .join("");
+  document.querySelector("#count").textContent =
+    `${visible.length} accepted ${visible.length === 1 ? "work" : "works"}`;
 }
 renderAccepted();
-document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filters button').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',x===b)});renderAccepted(b.dataset.year);}));
-const theme=document.querySelector('#theme');function setTheme(dark){document.body.classList.toggle('dark',dark);theme.textContent=dark?'☀':'☾';theme.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');theme.setAttribute('aria-pressed',dark)}try{setTheme(localStorage.getItem('theme')==='dark')}catch{}theme.addEventListener('click',()=>{const dark=!document.body.classList.contains('dark');setTheme(dark);try{localStorage.setItem('theme',dark?'dark':'light')}catch{}});
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('nav>div a').forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}),{rootMargin:'-10% 0px -65% 0px'});['about','publications','background'].forEach(id=>observer.observe(document.getElementById(id)));
+document.querySelectorAll(".filters button").forEach((b) =>
+  b.addEventListener("click", () => {
+    document.querySelectorAll(".filters button").forEach((x) => {
+      x.classList.toggle("selected", x === b);
+      x.setAttribute("aria-pressed", x === b);
+    });
+    renderAccepted(b.dataset.year);
+  }),
+);
