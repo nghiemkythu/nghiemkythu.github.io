@@ -1,13 +1,318 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Nghiem Tuong Diep — research in world models, embodied intelligence, and multimodal learning."><title>Nghiem Tuong Diep | Research</title><link rel="stylesheet" href="style.css"></head>
-<body><a class="skip" href="#about">Skip to content</a><header><nav aria-label="Main navigation"><a class="wordmark" href="#about">NTD<span>.</span></a><div><a href="#about" class="active">about</a><a href="#publications">publications</a><a href="assets/Nghiem_Tuong_Diep_CV.pdf" target="_blank" rel="noopener">curriculum vitae</a><button id="theme" aria-label="Toggle dark theme" title="Change theme">☾</button></div></nav></header>
-<main><section id="about"><div class="eyebrow">RESEARCH · EMBODIED & MULTIMODAL INTELLIGENCE</div><h1><strong>Nghiem</strong> Tuong Diep<span class="dot">.</span></h1><p class="native-name">Nghiêm Diệp Tường</p><div class="intro"><div><p>I am a Ph.D. student at <a href="https://mbzuai.ac.ae/" target="_blank" rel="noopener">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</a>. My research focuses on world models, embodied intelligence, and multimodal learning.</p><p>I am interested in how models can understand interactions, predict their consequences, and support reasoning and planning in the physical world.</p><p class="interest-label">My research interests include:</p><ul><li><strong>World models for embodied intelligence</strong> — learning dynamics that support long-horizon reasoning and planning.</li><li><strong>Latent action learning</strong> — learning transferable actions across different embodiments.</li><li><strong>Geometry and graph learning</strong> — structured representations for robotic interactions and medical AI.</li></ul><p class="intro-links"><a href="https://scholar.google.com.vn/citations?user=3YPTp-gAAAAJ&amp;hl=vi" target="_blank" rel="noopener">Google Scholar ↗</a><a href="https://github.com/nghiemkythu" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:Nghiem.Diep@mbzuai.ac.ae">Email ↗</a><a href="assets/Nghiem_Tuong_Diep_CV.pdf" target="_blank" rel="noopener">CV ↗</a></p></div><aside><div class="portrait"><img src="assets/nghiem-photo.jpg" alt="Nghiem Tuong Diep presenting research at ICML" width="856" height="1072"></div><p class="affiliation">MBZUAI<br>Abu Dhabi, UAE</p><p class="contact-email"><a href="mailto:Nghiem.Diep@mbzuai.ac.ae">Nghiem.Diep@mbzuai.ac.ae</a></p><p class="caption">World models. Actions. Interactions.</p></aside></div></section>
-<section id="news"><div class="section-heading"><h2>news</h2><span>Research highlights</span></div><div class="news"><div><time>2026</time><p><a href="https://focavla.github.io/" target="_blank" rel="noopener">FOCA</a>, our work on future-oriented conditioning for data-efficient VLA adaptation, at <strong>ICML 2026</strong>.</p></div><div><time>2026</time><p>Introducing <a href="https://robogaze-eval.github.io/" target="_blank" rel="noopener">RoboGaze</a>: structured vision-language analysis for evaluating robot world models.</p></div><div><time>2025</time><p><a href="https://exgra-med.github.io/" target="_blank" rel="noopener">ExGra-Med</a> at <strong>NeurIPS 2025</strong>, and our work on zero-initialized attention at <strong>ICML 2025</strong>.</p></div></div></section>
-<section id="preprints"><h2>preprints</h2><div id="preprint-papers"></div></section>
-<section id="publications"><div class="section-heading"><h2>publications</h2><span id="count" aria-live="polite"></span></div><div class="filters" role="group" aria-label="Filter publications by year"><button class="selected" data-year="all" aria-pressed="true">All</button><button data-year="2026" aria-pressed="false">2026</button><button data-year="2025" aria-pressed="false">2025</button><button data-year="2023" aria-pressed="false">2023</button></div><div id="papers"></div><p class="publication-note">Selected works · * denotes equal contribution.</p></section>
-<section id="background"><h2>background</h2><div class="background-row"><span>EDUCATION</span><div><h3>Mohamed bin Zayed University of Artificial Intelligence</h3><p>Ph.D. studies · Abu Dhabi, UAE</p><h3>VNUHCM – University of Science</h3><p>Advanced Program in Computer Science · Ho Chi Minh City, Vietnam</p></div></div><div class="background-row"><span>EXPERIENCE</span><div><h3>VinRobotics</h3><p>Prior research experience in robotics.</p></div></div></section>
-<div class="social-icons" aria-label="Contact and academic profiles">
-<a href="mailto:Nghiem.Diep@mbzuai.ac.ae" aria-label="Email Nghiem Tuong Diep" title="Email"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 8h44a8 8 0 0 1 8 8v3L36 38a7 7 0 0 1-8 0L2 19v-3a8 8 0 0 1 8-8Zm-8 17 23 17a12 12 0 0 0 14 0l23-17v23a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8Z"/></svg></a>
-<a href="https://scholar.google.com.vn/citations?user=3YPTp-gAAAAJ&amp;hl=vi" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><span class="brand-icon scholar-icon" aria-hidden="true"></span></a>
-<a href="https://github.com/nghiemkythu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><span class="brand-icon github-icon" aria-hidden="true"></span></a>
-</div><footer><span>© 2026 Nghiem Tuong Diep</span><a href="#about">Back to top ↑</a></footer></main><script src="app.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Nghiem Tuong Diep — research in world models, embodied intelligence, and multimodal learning."
+  >
+  <title>Nghiem Tuong Diep | Research</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="wordmark" href="#about">NTD<span>.</span></a>
+
+      <div>
+        <a href="#about" class="active">about</a>
+        <a href="#publications">publications</a>
+        <a
+          href="assets/Nghiem_Tuong_Diep_CV.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          curriculum vitae
+        </a>
+        <button
+          id="theme"
+          aria-label="Toggle dark theme"
+          title="Change theme"
+        >
+          ☾
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="eyebrow">
+        RESEARCH · EMBODIED &amp; MULTIMODAL INTELLIGENCE
+      </div>
+
+      <h1>
+        <strong>Nghiem</strong> Tuong Diep<span class="dot">.</span>
+      </h1>
+
+      <p class="native-name">Ph.D. Student · MBZUAI</p>
+
+      <div class="intro">
+        <div>
+          <p>
+            I am a Ph.D. student at
+            <a
+              href="https://mbzuai.ac.ae/"
+              target="_blank"
+              rel="noopener"
+            >
+              Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
+            </a>.
+            My research focuses on world models, embodied intelligence,
+            and multimodal learning.
+          </p>
+
+          <p>
+            I am interested in how models can understand interactions,
+            predict their consequences, and support reasoning and planning
+            in the physical world.
+          </p>
+
+          <p class="interest-label">My research interests include:</p>
+
+          <ul>
+            <li>
+              <strong>World models for embodied intelligence</strong>
+              — learning dynamics that support long-horizon reasoning
+              and planning.
+            </li>
+            <li>
+              <strong>Latent action learning</strong>
+              — learning transferable actions across different embodiments.
+            </li>
+            <li>
+              <strong>Geometry and graph learning</strong>
+              — structured representations for robotic interactions
+              and medical AI.
+            </li>
+          </ul>
+
+          <p class="intro-links">
+            <a
+              href="https://scholar.google.com/citations?user=3YPTp-gAAAAJ&amp;hl=en"
+              target="_blank"
+              rel="noopener"
+            >
+              Google Scholar ↗
+            </a>
+            <a
+              href="https://github.com/nghiemkythu"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub ↗
+            </a>
+            <a href="mailto:Nghiem.Diep@mbzuai.ac.ae">
+              Email ↗
+            </a>
+            <a
+              href="assets/Nghiem_Tuong_Diep_CV.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              CV ↗
+            </a>
+          </p>
+        </div>
+
+        <aside>
+          <div class="portrait">
+            <img
+              src="assets/nghiem-photo.jpg"
+              alt="Nghiem Tuong Diep presenting research at ICML"
+              width="856"
+              height="1072"
+            >
+          </div>
+
+          <p class="affiliation">
+            MBZUAI<br>
+            Abu Dhabi, UAE
+          </p>
+
+          <p class="contact-email">
+            <a href="mailto:Nghiem.Diep@mbzuai.ac.ae">
+              Nghiem.Diep@mbzuai.ac.ae
+            </a>
+          </p>
+
+          <p class="caption">World models. Actions. Interactions.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="section-heading">
+        <h2>news</h2>
+        <span>Research highlights</span>
+      </div>
+
+      <div class="news">
+        <div>
+          <time>2026</time>
+          <p>
+            <a
+              href="https://focavla.github.io/"
+              target="_blank"
+              rel="noopener"
+            >
+              FOCA
+            </a>,
+            our work on future-oriented conditioning for data-efficient
+            VLA adaptation, at <strong>ICML 2026</strong>.
+          </p>
+        </div>
+
+        <div>
+          <time>2026</time>
+          <p>
+            Introducing
+            <a
+              href="https://robogaze-eval.github.io/"
+              target="_blank"
+              rel="noopener"
+            >
+              RoboGaze
+            </a>:
+            structured vision-language analysis for evaluating
+            robot world models.
+          </p>
+        </div>
+
+        <div>
+          <time>2025</time>
+          <p>
+            <a
+              href="https://exgra-med.github.io/"
+              target="_blank"
+              rel="noopener"
+            >
+              ExGra-Med
+            </a>
+            at <strong>NeurIPS 2025</strong>, and our work on
+            zero-initialized attention at <strong>ICML 2025</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="preprints">
+      <h2>preprints</h2>
+      <div id="preprint-papers"></div>
+    </section>
+
+    <section id="publications">
+      <div class="section-heading">
+        <h2>publications</h2>
+        <span id="count" aria-live="polite"></span>
+      </div>
+
+      <div
+        class="filters"
+        role="group"
+        aria-label="Filter publications by year"
+      >
+        <button
+          class="selected"
+          data-year="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
+        <button data-year="2026" aria-pressed="false">2026</button>
+        <button data-year="2025" aria-pressed="false">2025</button>
+        <button data-year="2023" aria-pressed="false">2023</button>
+      </div>
+
+      <div id="papers"></div>
+
+      <p class="publication-note">
+        Selected works · * denotes equal contribution.
+      </p>
+    </section>
+
+    <section id="background">
+      <h2>background</h2>
+
+      <div class="background-row">
+        <span>EDUCATION</span>
+
+        <div>
+          <h3>
+            Mohamed bin Zayed University of Artificial Intelligence
+          </h3>
+          <p>Ph.D. studies · Abu Dhabi, UAE</p>
+
+          <h3>VNUHCM – University of Science</h3>
+          <p>
+            Advanced Program in Computer Science · Ho Chi Minh City, Vietnam
+          </p>
+        </div>
+      </div>
+
+      <div class="background-row">
+        <span>EXPERIENCE</span>
+
+        <div>
+          <h3>VinRobotics</h3>
+          <p>Prior research experience in robotics.</p>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="social-icons"
+      aria-label="Contact and academic profiles"
+    >
+      <a
+        href="mailto:Nghiem.Diep@mbzuai.ac.ae"
+        aria-label="Email Nghiem Tuong Diep"
+        title="Email"
+      >
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path
+            d="M10 8h44a8 8 0 0 1 8 8v3L36 38a7 7 0 0 1-8 0L2 19v-3a8 8 0 0 1 8-8Zm-8 17 23 17a12 12 0 0 0 14 0l23-17v23a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8Z"
+          />
+        </svg>
+      </a>
+
+      <a
+        href="https://scholar.google.com/citations?user=3YPTp-gAAAAJ&amp;hl=en"
+        target="_blank"
+        rel="noopener"
+        aria-label="Google Scholar"
+        title="Google Scholar"
+      >
+        <span
+          class="brand-icon scholar-icon"
+          aria-hidden="true"
+        ></span>
+      </a>
+
+      <a
+        href="https://github.com/nghiemkythu"
+        target="_blank"
+        rel="noopener"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        <span
+          class="brand-icon github-icon"
+          aria-hidden="true"
+        ></span>
+      </a>
+    </div>
+
+    <footer>
+      <span>© 2026 Nghiem Tuong Diep</span>
+      <a href="#about">Back to top ↑</a>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
