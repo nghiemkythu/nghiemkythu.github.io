@@ -26,8 +26,6 @@ function renderAccepted(year = "all") {
                 .join("")}</div>`,
           )
           .join("");
-  document.querySelector("#count").textContent =
-    `${visible.length} accepted ${visible.length === 1 ? "work" : "works"}`;
 }
 renderAccepted();
 document.querySelectorAll(".filters button").forEach((b) =>
