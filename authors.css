@@ -1,0 +1,26 @@
+/* Expandable publication authors — matches the understated reference style. */
+.authors .authors-toggle {
+  display: inline;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px dashed currentColor;
+  border-radius: 0;
+  background: none;
+  color: #888;
+  font: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.authors .authors-toggle:hover {
+  color: var(--accent, #ff6f00);
+}
+.authors .authors-toggle:focus-visible {
+  outline: 2px solid var(--accent, #ff6f00);
+  outline-offset: 3px;
+}
+.authors [hidden] {
+  display: none !important;
+}
