@@ -15,10 +15,10 @@
   text-align: left;
 }
 .authors .authors-toggle:hover {
-  color: var(--accent, #ff6f00);
+  color: var(--accent, #15803d);
 }
 .authors .authors-toggle:focus-visible {
-  outline: 2px solid var(--accent, #ff6f00);
+  outline: 2px solid var(--accent, #15803d);
   outline-offset: 3px;
 }
 .authors [hidden] {
